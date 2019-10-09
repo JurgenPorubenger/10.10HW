@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .cars_stylesheet
+    each car in carArr
+      div(class='car_style_'+car.name)
+      h1.name= car.name
+      h1.price= car.price
+  script(src='javascripts/main.js')
+
