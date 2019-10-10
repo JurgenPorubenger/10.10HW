@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const formModel = require('../model/article');
+const userModel = require('../model/user');
 
 
 /* GET users listing. */
@@ -8,28 +8,24 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-
-
-
-
-// router.post('/register', function(req, res, next) {
-//   const{username,email,pwd}=req.body;
-//   const User= new formModel({username,email,pwd});
-//
-//   formModel.findOne({email:email})
-//       .then(data=>{
-//           if(data) {
-//             res.send('Такой пользователь уже существует!');
-//            } else {
-//            User.save()
-//                 .then((data2)=>{
-//                   res.send(`Пользователь ${data2.username} зарегестрирован!`);
-//                   console.log(`Object ${data2} saved!`)
-//                 })
-//                 .catch((err)=>console.log(err));
-//     }
-//   });
-// });
+router.post('/register', function(req, res, next) {
+  const{username,email,pwd}=req.body;
+  // console.log(req.body);
+  const User= new userModel({username,email,pwd});
+  userModel.findOne({email:email})
+      .then(data=>{
+          if(data) {
+            res.send('Такой пользователь уже существует!');
+           } else {
+           User.save()
+                .then((data2)=>{
+                  console.log("Пользователь сохранен!");
+                  res.json(JSON.stringify(data2));
+                })
+                .catch((err)=>console.log(err));
+    }
+  });
+});
 //
 //
 // router.post('/login', function(req, res, next) {

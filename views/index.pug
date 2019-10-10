@@ -1,10 +1,24 @@
 extends layout
 
 block content
+  .nav_reg_log
+    .reg
+      .inp
+        input(type='text' placeholder='name' id='reg_name')
+        input(type='text' placeholder='email' id='reg_email')
+        input(type='text' placeholder='pwd' id='reg_pwd')
+      .btn
+        button(type='submit' id='reg_btn') Registrate
+    .log
+      .inp
+        input(type='text' placeholder='name' id='log_name')
+        input(type='text' placeholder='pwd' id='log_pwd')
+      .btn
+        button(type='submit' id='log_btn') Login
   .cars_stylesheet
     each car in carArr
-      div(class='car_style_'+car.name)
-      h1.name= car.name
-      h1.price= car.price
-  script(src='javascripts/main.js')
+      div(class='car_style')
+        h1.name= car.name
+        h1.price= car.price
+  script(src='./javascripts/main.js')
 
