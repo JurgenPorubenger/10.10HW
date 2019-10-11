@@ -4,14 +4,16 @@ console.log("Alive!");
 document.querySelector("#reg_btn").addEventListener("click", function (e) {
         e.preventDefault();
         console.log("Click");
-
         // получаем данные формы
-        let name = document.querySelector('#reg_name').value;
+        let username = document.querySelector('#reg_name').value;
         let email = document.querySelector('#reg_email').value;
         let pwd = document.querySelector('#reg_pwd').value;
         // let direction = JSON.stringify({way});
-        let formRegister= {name, email, pwd};
-        // console.log(formRegister);
+        let formRegister= {username, email, pwd};
+        console.log(username);
+        console.log(email);
+        console.log(pwd);
+        console.log(formRegister);
 
         fetch('/api/register', {
             method: 'POST',
@@ -26,7 +28,10 @@ document.querySelector("#reg_btn").addEventListener("click", function (e) {
                     return  response.json()
                 }
             })
-            .then(result=> console.log(result))
+            .then(result=>{
+                // localStorage.setItem('result', result);
+                console.log(`${result} RESULT`)
+            })
             .catch(function(err) {
                 console.log('Fetch Error :-S', err);
             });

@@ -21,3 +21,6 @@ h1 {
 #reg_name, #reg_email, #reg_pwd, #log_name, #log_pwd, .btn  {
   margin: 10px 10px 10px 10px;
 }
+.alert {
+  color: crimson;
+}

@@ -3,12 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="2e24fd7f-86f0-4f34-baa7-25ed6b5768b8" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 =======
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/model/user.js" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/public/javascripts/main2.js" afterDir="false" />
+>>>>>>> 0f4f567df545a9d7896a1edbcb8c1cc104843d5d
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/car.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
@@ -37,7 +40,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/javascripts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -51,6 +54,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Arkh\Desktop\10.10HW\public\javascripts" />
       <recent name="C:\Users\Arkh\Desktop\10.10HW\model" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/routes" />
@@ -82,8 +86,13 @@
       <workItem from="1570649737930" duration="3380000" />
 =======
       <workItem from="1570649737930" duration="2797000" />
+<<<<<<< HEAD
       <workItem from="1570698521904" duration="10672000" />
 >>>>>>> 042b5dbde12aca290ad68f927392d06ac88d80fe
+=======
+      <workItem from="1570698521904" duration="10755000" />
+      <workItem from="1570793736900" duration="6552000" />
+>>>>>>> 0f4f567df545a9d7896a1edbcb8c1cc104843d5d
     </task>
     <servers />
   </component>
@@ -95,7 +104,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
