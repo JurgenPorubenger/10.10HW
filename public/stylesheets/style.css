@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+.nav_reg_log {
+  display: flex;
+  justify-content: space-around;
+}
+.car_style {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+h1 {
+  display: inline-block;
+}
+#reg_name, #reg_email, #reg_pwd, #log_name, #log_pwd, .btn  {
+  margin: 10px 10px 10px 10px;
+}
