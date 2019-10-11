@@ -26,7 +26,10 @@ document.querySelector("#reg_btn").addEventListener("click", function (e) {
                     return  response.json()
                 }
             })
-            .then(result=> console.log(result))
+            .then(result=>{
+                // localStorage.setItem('result', result);
+                console.log(result)
+            })
             .catch(function(err) {
                 console.log('Fetch Error :-S', err);
             });

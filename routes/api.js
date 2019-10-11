@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.post('/register', function(req, res, next) {
   const{username,email,pwd}=req.body;
   // console.log(req.body);
-  const User= new userModel({username,email,pwd});
+  const User= new userModel(req.body);
   userModel.findOne({email:email})
       .then(data=>{
           if(data) {
@@ -19,13 +19,30 @@ router.post('/register', function(req, res, next) {
            } else {
            User.save()
                 .then((data2)=>{
-                  console.log("Пользователь сохранен!");
+
+                  console.log(`Пользователь сохранен! ${data2}`);
                   res.json(JSON.stringify(data2));
                 })
                 .catch((err)=>console.log(err));
     }
   });
 });
+
+router.post('/login', function(req, res, next) {
+  const{username,pwd}=req.body;
+  // console.log(req.body);
+  userModel.findOne({username:username, pwd:pwd})
+      .then(data=>{
+          if(data) {
+            console.log("Log successful!")
+            res.json(JSON.stringify(data));
+            } else {
+              res.json(JSON.stringify({massage:'You need registration'}));
+          }
+  });
+});
+
+
 //
 //
 // router.post('/login', function(req, res, next) {
