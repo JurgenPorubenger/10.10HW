@@ -10,11 +10,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/register', function(req, res, next) {
     console.log('REG');
-    console.log(req.body);
     const{username,email,pwd}=req.body;
-  // console.log(req.body.username+' '+ 'lplpl');
-  const User= new userModel({username, email, pwd});
-    // console.log(`User ${User}`);
+    const User= new userModel({username, email, pwd});
     userModel.findOne({email:email})
       .then(data=>{
           if(data) {
@@ -30,11 +27,12 @@ router.post('/register', function(req, res, next) {
   });
 });
 
+
 router.post('/login', function(req, res, next) {
   const{username,pwd}=req.body;
-  // console.log(req.body);
-  userModel.findOne({username:username, pwd:pwd})
+  userModel.findOne({username:username})
       .then(data=>{
+          console.log(`${JSON.stringify(data)} jjj`);
           if(data) {
             console.log("Log successful!");
             res.json(JSON.stringify(data));
@@ -42,6 +40,23 @@ router.post('/login', function(req, res, next) {
               res.json(JSON.stringify({massage:'You need registration'}));
           }
   });
+});
+
+router.post('/addcar', function (req, res, next) {
+    const{username,email,pwd}=req.body;
+    console.log('req.body'+username+pwd);
+    // res.send('ok');
+    userModel.find({username:username, email:email,pwd:pwd})
+        .then(data=>{
+            if(data) {
+                console.log("Можно добавлять машину");
+                console.log(`${data} ANSWER`);
+                res.json(JSON.stringify(data));
+            } else {
+                res.json(JSON.stringify({massage:'You need login'}));
+            }
+        })
+
 });
 
 

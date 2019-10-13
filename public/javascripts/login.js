@@ -6,10 +6,9 @@ document.querySelector("#log_btn").addEventListener("click", function (e) {
         console.log("Click");
 
         // получаем данные формы
-        let name = document.querySelector('#log_name').value;
+        let username = document.querySelector('#log_name').value;
         let pwd = document.querySelector('#log_pwd').value;
-        // let direction = JSON.stringify({way});
-        let formLogin= {name, pwd};
+        let formLogin= {username, pwd};
         // console.log(formLogin);
 
         fetch('/api/login', {
@@ -26,17 +25,20 @@ document.querySelector("#log_btn").addEventListener("click", function (e) {
                 }
             })
             .then(result=> {
-                 let massageObj = JSON.parse(result);
+                let massageObj = JSON.parse(result);
                 if(massageObj.massage){
-                    console.log(result+''+"HAS")
+                    document.querySelector('#reg_name').style.border = "1px solid red";
+                    document.querySelector('#reg_email').style.border = "1px solid red";
+                    document.querySelector('#reg_pwd').style.border = "1px solid red";
+                    console.log(result+''+"HAS");
                     let massage = massageObj.massage;
-                    let div = document.createElement('div');
-                    div.className = "alert";
-                    div.innerHTML = `<h1>${massage}</h1>`;
-                    document.querySelector('.log').appendChild(div);
+                    alert(massage);
+                } else {
+                    console.log("LOcalstorage");
+                    localStorage.setItem('userStorage', result);
                 }
             })
-            .catch(function(err) {
+            .catch(err=> {
                 console.log('Fetch Error :-S', err);
             });
 

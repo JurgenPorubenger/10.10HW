@@ -1,4 +1,4 @@
-body {
+  body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -21,6 +21,13 @@ h1 {
 #reg_name, #reg_email, #reg_pwd, #log_name, #log_pwd, .btn  {
   margin: 10px 10px 10px 10px;
 }
-.alert {
-  color: crimson;
+/*.alert {*/
+/*  color: crimson;*/
+/*}*/
+.cars_stylesheet {
+  margin-top:20px;
 }
+
+  .add_car_input {
+    display: none;
+  }

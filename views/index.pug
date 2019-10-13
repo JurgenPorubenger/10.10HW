@@ -3,6 +3,7 @@ extends layout
 block content
   .nav_reg_log
     .reg
+      h1 Registration
       .inp
         input(type='text' placeholder='username' id='reg_name')
         input(type='text' placeholder='email' id='reg_email')
@@ -10,6 +11,7 @@ block content
       .btn
         button(type='submit' id='reg_btn') Registrate
     .log
+      h1 Login
       .inp
         input(type='text' placeholder='name' id='log_name')
         input(type='text' placeholder='pwd' id='log_pwd')
@@ -20,6 +22,11 @@ block content
       div(class='car_style')
         h1.name= car.name
         h1.price= car.price
-  script(src='./javascripts/main.js')
-  script(src='./javascripts/main2.js')
+        button(type='submit' class='sale') To sell
+        button(type='submit' class='change') Change
+  button(type='submit' id='add_car') Add car!
+  div(class='add_car_input')
+  script(src='./javascripts/registration.js')
+  script(src='./javascripts/login.js')
+  script(src='./javascripts/addcar.js')
 
