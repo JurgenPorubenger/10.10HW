@@ -3,9 +3,28 @@ var router = express.Router();
 const userModel = require('../model/user');
 const carModel = require('../model/car');
 
+let carList=[];
+
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.use(function (req,res,next) {
+    carModel.find({})
+        .then(data=> {
+                if (data.length !== 0) {
+                    let arr=[];
+                    let oneCar;
+                    data.forEach((item, i) => {
+                        const {model, price} = item;
+                        oneCar = {model: model, price: price};
+                        arr.push(oneCar);
+                    });
+                    return arr;
+                } else { return []; }
+            }
+        ).then(data=>{
+        carList=data;
+        console.log(carList+'CARLIST');
+        next();
+    }).catch((err)=>console.log(err));
 });
 
 router.post('/register', function(req, res, next) {
@@ -44,6 +63,7 @@ router.post('/login', function(req, res, next) {
 
 router.post('/addcar', function (req, res, next) {
     const{model, price}=req.body;
+    console.log(req.body);
     if (model&&price){
         const Car = new carModel({model,price});
         Car.save()
@@ -53,9 +73,14 @@ router.post('/addcar', function (req, res, next) {
             })
             .catch((err)=>console.log(err));
     }
-
 });
 
 
+
+
+router.get('/', function(req, res, next) {
+    console.log(carList.length+' CARLIST121');
+    res.render('index', { carArr: carList});
+});
 
 module.exports = router;

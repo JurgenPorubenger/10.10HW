@@ -16,11 +16,14 @@ document.querySelector("#add_car").addEventListener("click", function (e) {
                 'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify(car),
-        }).then(data=>{
+        })
+        .then(data=>{
             return data.json()
-        }).then(data2=>{
+        })
+        .then(data2=>{
             console.log(JSON.parse(data2));
-        }).catch(err=>
+        })
+        .catch(err=>
             console.log('Fetch Error :-S', err))
     }else{
         console.log('NONO')
