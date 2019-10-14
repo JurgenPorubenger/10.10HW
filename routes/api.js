@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const userModel = require('../model/user');
-
+const carModel = require('../model/car');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -34,7 +34,7 @@ router.post('/login', function(req, res, next) {
       .then(data=>{
           console.log(`${JSON.stringify(data)} jjj`);
           if(data) {
-            console.log("Log successful!");
+              console.log("Log successful!");
             res.json(JSON.stringify(data));
             } else {
               res.json(JSON.stringify({massage:'You need registration'}));
@@ -43,19 +43,16 @@ router.post('/login', function(req, res, next) {
 });
 
 router.post('/addcar', function (req, res, next) {
-    const{username,email,pwd}=req.body;
-    console.log('req.body'+username+pwd);
-    // res.send('ok');
-    userModel.find({username:username, email:email,pwd:pwd})
-        .then(data=>{
-            if(data) {
-                console.log("Можно добавлять машину");
-                console.log(`${data} ANSWER`);
-                res.json(JSON.stringify(data));
-            } else {
-                res.json(JSON.stringify({massage:'You need login'}));
-            }
-        })
+    const{model, price}=req.body;
+    if (model&&price){
+        const Car = new carModel({model,price});
+        Car.save()
+            .then((data2)=>{
+                console.log(`Машина сохранена! ${data2}`);
+                res.json(JSON.stringify(data2));
+            })
+            .catch((err)=>console.log(err));
+    }
 
 });
 

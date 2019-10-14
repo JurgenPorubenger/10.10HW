@@ -20,12 +20,14 @@ block content
   .cars_stylesheet
     each car in carArr
       div(class='car_style')
-        h1.name= car.name
+        h1.name= car.model
         h1.price= car.price
         button(type='submit' class='sale') To sell
         button(type='submit' class='change') Change
-  button(type='submit' id='add_car') Add car!
   div(class='add_car_input')
+    input(type='text' placeholder='model' id='model')
+    input(type='text' placeholder='price' id='price')
+  button(type='submit' id='add_car') Add car!
   script(src='./javascripts/registration.js')
   script(src='./javascripts/login.js')
   script(src='./javascripts/addcar.js')

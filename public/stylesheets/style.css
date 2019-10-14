@@ -8,7 +8,7 @@ a {
 }
 .nav_reg_log {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .car_style {
   display: flex;
@@ -18,16 +18,15 @@ a {
 h1 {
   display: inline-block;
 }
-#reg_name, #reg_email, #reg_pwd, #log_name, #log_pwd, .btn  {
+#reg_name, #reg_email, #reg_pwd, #log_name, #log_pwd, #add_car, #model, #price  , .btn  {
   margin: 10px 10px 10px 10px;
 }
-/*.alert {*/
-/*  color: crimson;*/
-/*}*/
+
 .cars_stylesheet {
   margin-top:20px;
 }
 
   .add_car_input {
     display: none;
+
   }

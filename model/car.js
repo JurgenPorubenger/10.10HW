@@ -2,9 +2,8 @@ const mongoose = require('mongoose');
 const  Schema = mongoose.Schema;
 
 const carschema = new Schema({
-        username: String,
-        email: String,
-        pwd: String,
+        model: String,
+        price: Number,
 });
 
 
